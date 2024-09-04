@@ -23,5 +23,5 @@
 ***
     Ktor  : https://ktor.io/docs/client-create-new-application.html#create-client
 ***
-    livedata  : https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
+    statFlow  : https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
 ***
