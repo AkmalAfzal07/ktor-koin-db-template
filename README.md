@@ -15,7 +15,7 @@
     Coroutine : https://developer.android.com/kotlin/coroutines
 ***
 
-    Koin   : [https://developer.android.com/training/dependency-injection/hilt-android](https://insert-koin.io/docs/setup/koin/)
+    Koin   : https://insert-koin.io/docs/setup/koin/
 ***
     Navigation: https://developer.android.com/guide/navigation
 ***
