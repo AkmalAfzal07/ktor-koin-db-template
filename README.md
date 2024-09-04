@@ -2,10 +2,12 @@
 
 ### Apps Packages 
 
- data : It contains all the data accessing with model,network,source packges.
+
+    data : It contains all the data accessing with model,network,source packges.
     di   : Dependency providing classes using Koin.
     ui   : View classes with their corresponding ViewModel for base, viewHolder.
     utils: Utility classes.
+
 
     ### reference resources:
 
