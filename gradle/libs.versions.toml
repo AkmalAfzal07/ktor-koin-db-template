@@ -1,0 +1,80 @@
+[versions]
+agp = "8.6.0"
+kotlin = "2.0.20"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+room = "2.6.1"
+ksp = "2.0.20-1.0.24"
+koil = "2.7.0"
+ssp-sdp = "1.1.1"
+gson = "2.11.0"
+lottie = "6.5.1"
+koin-bom = "4.0.0-RC2"
+koin-annotation = "1.4.0-RC4"
+ktor = "2.3.12"
+#kotlinx-serialization-plugin = "1.7.1"
+kotlinx-serialization = "1.7.1"
+activity = "1.9.1"
+constraintlayout = "2.1.4"
+legacySupportV4 = "1.0.0"
+lifecycleLivedataKtx = "2.8.4"
+lifecycleViewmodelKtx = "2.8.4"
+fragmentKtx = "1.8.2"
+navigationFragmentKtx = "2.7.7"
+navigationUiKtx = "2.7.7"
+
+
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+koil = { group = "io.coil-kt", name = "coil-compose", version.ref = "koil" }
+ssp = { group = "com.intuit.ssp", name = "ssp-android", version.ref = "ssp-sdp" }
+sdp = { group = "com.intuit.sdp", name = "sdp-android", version.ref = "ssp-sdp" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotation" }
+koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotation" }
+koin-boom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
+koin-core = { module = "io.insert-koin:koin-core" }
+koin-android = { module = "io.insert-koin:koin-android" }
+koin-coroutines = { module = "io.insert-koin:koin-core-coroutines" }
+koin-ktor = {module= "io.insert-koin:koin-ktor" }
+koin-logging = { module = "io.insert-koin:koin-logger-slf4j" }
+ktor-bom = { module = "io.ktor:ktor-bom", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+
