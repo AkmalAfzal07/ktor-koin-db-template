@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PlayerDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(movies: List<Player>)
+    suspend fun insertAll(movies: List<Player>)
 
     @Query("SELECT * FROM player WHERE country_id = :id")
     fun fetchAllData(id: Int): Flow<List<Player>>
@@ -21,5 +21,5 @@ interface PlayerDao {
 
 
     @Query("SELECT count(*) FROM player")
-    fun totalPlayerRecords(): Int
+    suspend fun totalPlayerRecords(): Int
 }

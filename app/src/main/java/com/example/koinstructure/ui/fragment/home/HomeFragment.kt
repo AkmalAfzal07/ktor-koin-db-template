@@ -58,7 +58,7 @@ class HomeFragment : Fragment() {
         launchAndRepeatWithViewLifecycle{
             // Collecting data from the database
             launch {
-                viewModel.fetchDataFromDatabase().collectLatest { data ->
+                viewModel.fetchDataFromDatabase().collect { data ->
                     Log.i(TAG, "fetchDataFromDatabase: $data")
 
                     if (data.isEmpty()) {
@@ -82,8 +82,8 @@ class HomeFragment : Fragment() {
                             teamList = state.data?.data
                             Log.d(TAG, "apiCall: ${state.data}")
                             updateUI()
-                            viewModel.insertTeams(teamList!!)
                             loadingDialog = requireContext().setLoadingDialog(loadingDialog, false)
+                            viewModel.insertTeams(teamList!!)
                         }
 
                         is UiState.Error -> {

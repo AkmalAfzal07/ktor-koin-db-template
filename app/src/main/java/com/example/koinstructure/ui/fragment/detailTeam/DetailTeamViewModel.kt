@@ -1,7 +1,6 @@
 package com.example.koinstructure.ui.fragment.detailTeam
 
 import android.app.Application
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import com.example.koinstructure.data.localDb.dao.PlayerDao
 import com.example.koinstructure.data.model.Player
@@ -21,14 +20,15 @@ class DetailTeamViewModel(application: Application,val repository: Repository,va
     val _uiStatePlayerList = MutableStateFlow<UiState<ResponsePlayers?>>(UiState.Idle)
     val uiStatePlayerDetailList: StateFlow<UiState<ResponsePlayers?>> = _uiStatePlayerList.asStateFlow()
 
-    fun getPlayerList() = viewModelScope.launch {
-        fetchData(_uiStatePlayerList) { repository.getPlayersData(context) }
+    fun fetchFromRemote() = viewModelScope.launch {
+        val isData = playerDao.totalPlayerRecords()
+        if (isData == 0) {
+            fetchData(_uiStatePlayerList) { repository.getPlayersData(context) }
+        }
     }
 
-    suspend fun insertPlayerData(data: MutableList<Player>) {
-        return withContext(Dispatchers.IO) {
-            playerDao.insertAll(data)
-        }
+    fun insertPlayerData(data: MutableList<Player>) = viewModelScope.launch {
+        playerDao.insertAll(data)
     }
 
     suspend fun fetchDataFromDatabase(id: Int): Flow<List<Player>> {

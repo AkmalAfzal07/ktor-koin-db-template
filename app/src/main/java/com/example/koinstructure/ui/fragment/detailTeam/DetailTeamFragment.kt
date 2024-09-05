@@ -15,7 +15,6 @@ import com.example.koinstructure.ui.fragment.detailTeam.adapter.PlayerAdapter
 import com.example.koinstructure.utils.UiState
 import com.example.koinstructure.utils.Utils.launchAndRepeatWithViewLifecycle
 import com.example.koinstructure.utils.Utils.setLoadingDialog
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
@@ -52,15 +51,14 @@ class DetailTeamFragment : Fragment() {
 
     private fun apiCall()
     {
+        viewModel.fetchFromRemote()
+
         launchAndRepeatWithViewLifecycle{
             // Collecting data from the database
             launch {
-                viewModel.fetchDataFromDatabase(countryId).collectLatest { data ->
-                    Log.i(TAG, "fetchDataFromDatabase: $data")
-
-                    if (data.isEmpty()) {
-                        viewModel.getPlayerList()
-                    } else {
+                viewModel.fetchDataFromDatabase(countryId).collect { data ->
+                    Log.d(TAG, "fetchDataFromDatabase: $countryId $data ")
+                    if (data.isNotEmpty()) {
                         playerList = data.toMutableList()
                         updateUi()
                     }
@@ -77,8 +75,8 @@ class DetailTeamFragment : Fragment() {
                         is UiState.Success -> {
                             playerList = state.data?.data
                             updateUi()
-                            viewModel.insertPlayerData(playerList!!)
                             loadingDialog = requireContext().setLoadingDialog(loadingDialog, false)
+                            viewModel.insertPlayerData(playerList!!)
                         }
 
                         is UiState.Error -> {
