@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.koinstructure.di.adaptersModule
 import com.example.koinstructure.di.apiServiceModule
 import com.example.koinstructure.di.baseViewModelModule
+import com.example.koinstructure.di.coroutineModule
 import com.example.koinstructure.di.databaseModule
 import com.example.koinstructure.di.networkModule
 import com.example.koinstructure.di.preferenceModule
@@ -25,6 +26,7 @@ class MyApplication:Application() {
             androidContext(this@MyApplication)
             slf4jLogger(Level.DEBUG)
             modules(
+                coroutineModule,
                 databaseModule,
                 networkModule,
                 apiServiceModule,
